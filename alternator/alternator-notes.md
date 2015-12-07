@@ -9,7 +9,7 @@ categories: alternator alternatives
 
 ---
 
-#OEM Information#
+# OEM Information
 
 - v belt pulley
 - OEM 85 amp
@@ -21,7 +21,7 @@ categories: alternator alternatives
 - Saddle mount
 - Shaft size unknown. Known to be smaller than 17 mm.
 
-#AC Delco#
+# AC Delco
 
 - Source: <http://www.jpurnell.com/rr/repairs/DelcoAlternator.htm>
 - Source: <http://www.landroversonly.com/forums/f9/delco-alternator-conversion-23504/>
@@ -34,7 +34,7 @@ categories: alternator alternatives
 - Alternator 8217N, 10463624, 10480157, 321-1086, 334-2403, 334-2461, AL8597N,
 - 210-5126, AL8597X, 91330, 21004, 91330, P8114-3, 90-01-4240, 8217-3 8114, 8217
 
-#Bosch#
+# Bosch
 
 - <http://www.rangerovers.net/rrupgrades/electrical/boschalternator.html>
 - <http://rangerovers.net/rrupgrades/electrical/boschalternator.html>
@@ -58,13 +58,13 @@ categories: alternator alternatives
 - ?bosch 0120465006
 - ?leece neville 20110376
 
-#Land Rover Truck Alternator#
+# Land Rover Truck Alternator
 
 - <http://www.obbstartersandalternators.com/land-rover-truck-alternator-13726n-63321240-63321353-63341240-63341353-man822-amr2938-amr2938e-amr4247-al9349x-1283-dra3675-13726-p-843.html>
 - Amazon: <http://www.amazon.com/Crank-n-Charge-13726N-Landrover-Replacement-Alternator/dp/B017XY0J0G/ref=sr_1_3?ie=UTF8&qid=1449457752&sr=8-3&keywords=alternator+13726n>
 - Appears to be same saddle mount as OEM alternator for the 92 RRC
 
-#Hummer H1 240amp alternator#
+# Hummer H1 240amp alternator
 
 - <http://www.expeditionportal.com/forum/threads/81420-240-amp-H1-alternator-for-classic-range-rover>
 
