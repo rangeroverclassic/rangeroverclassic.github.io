@@ -1,3 +1,10 @@
+---
+layout: page 
+title:  "Alternator Notes"
+date:   2015-12-7 19:40:00 -0800
+categories: alternator alternatives 
+---
+
 # RRC Alternator
 
 ---
@@ -56,7 +63,8 @@ Hummer H1 240amp alternator <http://www.expeditionportal.com/forum/threads/81420
 ---
 
 Notes from:
-<http://www.jpurnell.com/rr/repairs/DelcoAlternator.htm>
-<http://www.pirate4x4.com/forum/land-rover/196365-alternator-choices.html>
-<http://rangerovers.net/rrupgrades/electrical/boschalternator.html>
-<http://www.landroversonly.com/forums/f9/delco-alternator-conversion-23504/>
+
+- <http://www.jpurnell.com/rr/repairs/DelcoAlternator.htm>
+- <http://www.pirate4x4.com/forum/land-rover/196365-alternator-choices.html>
+- <http://rangerovers.net/rrupgrades/electrical/boschalternator.html>
+- <http://www.landroversonly.com/forums/f9/delco-alternator-conversion-23504/>
