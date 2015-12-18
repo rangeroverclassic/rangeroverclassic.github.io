@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0077)http://www.rangerovers.net/repairdetails/instruments/checkengine.html#classic -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+  
+  
+
+  
+  <meta name="Author" content="John Brabyn, Ph.D.">
+
+  
+  <meta name="GENERATOR" content="Microsoft FrontPage 12.0">
+
+  
+  <title>rrepairs</title>
+  
+
+<script type="text/javascript" async="" src="./check-engine-light_files/vglnk.js"></script><script async="" src="./check-engine-light_files/beacon.js"></script><script type="text/javascript" async="" src="./check-engine-light_files/ga.js"></script><script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js">
+</script>
+<script type="text/javascript">
+	GS_googleAddAdSenseService("ca-pub-7865546952023728");
+	GS_googleEnableAllServices();
+	</script>
+	<script type="text/javascript">
+	GA_googleAddAttr("sitename", "Rangerovers.net");
+	</script>
+	<script type="text/javascript">
+	GA_googleAddAdSensePageAttr("google_color_bg", "FFffff");
+	GA_googleAddAdSensePageAttr("google_color_border", "FFffff");
+	GA_googleAddAdSensePageAttr("google_color_link", "0000cc");
+	GA_googleAddAdSensePageAttr("google_color_text", "000000");
+	GA_googleAddAdSensePageAttr("google_color_url", "0000cc");
+
+	GA_googleAddSlot("ca-pub-7865546952023728", "Rangerovers_net_728x90_Top_AUTO_Content");
+	GA_googleAddSlot("ca-pub-7865546952023728", "Rangerovers_net_728x90_Bottom_AUTO_Content");
+	
+</script>
+<script type="text/javascript">
+GA_googleFetchAds();
+</script><script async="" defer="" src="http://data.captifymedia.com/287892.js?r=1792825378943234.8&m=1112&a=287892"></script><style type="text/css"></style></head>
+
+
+<body style="color: rgb(0, 0, 0); background-color: #E1E1E1;" alink="#FF0000" link="#0000EE" vlink="#800000" background="./check-engine-light_files/PageTex.jpg"><div style="width:100%; text-align:center;">
+<script type="text/javascript">
+GA_googleFillSlot("Rangerovers_net_728x90_Top_AUTO_Content");
+</script>
+</div> 
+
+
+<font face="Segoe UI">
+
+<font color="#000066">
+
+<a name="top"></a></font><big><font size="+2"><big><font color="#000066">"Check
+Engine", "Service
+Engine",
+and "EFI" Warning Lights:<br>
+
+Functions and Resetting Procedures</font><br>
+
+</big></font></big>
+
+<br>
+
+<big><br>
+
+<a href="http://www.rangerovers.net/repairdetails/instruments/checkengine.html#intro">Introduction</a><br>
+
+<a href="./check-engine-light_files/check-engine-light.html">Classic</a><br>
+
+<a href="http://www.rangerovers.net/repairdetails/instruments/checkengine.html#p38">P38</a><br>
+
+<a href="http://www.rangerovers.net/repairdetails/instruments/checkengine.html#p38">Mk III</a><br>
+
+<a href="http://www.rangerovers.net/repairdetails/instruments/checkengine.html#sport">Sport</a></big><i><br>
+
+</i><big><big><br>
+
+<br>
+
+<a name="intro"></a>Introduction</big></big><i><b><br>
+
+</b></i>
+</font>
+<p><font face="Segoe UI">The functions and meanings of these lights can be confusing, as they
+have changed over the years. These lights can easily be confused,
+because the "Check
+Engine"
+light serves a different purpose (emissions maintenance reminder) on
+early
+models than it does on later ones (indicating EFI faults). The
+emissions
+maintenance reminder function was taken over by the "Service Engine"
+light
+on later models, while EFI fault indication was taken over by the
+"Check
+Engine" light!!</font></p>
+
+<p><font face="Segoe UI"><big><font size="+1"><big><br>
+
+<a name="classic"></a>Classic Models</big></font></big><br>
+
+</font>
+
+</p>
+
+<p><font face="Segoe UI"><big><b>Most Common Cause of the Light Coming On:</b>
+</big><br>
+
+The most common cause is one of the oxygen sensors needing replacement.
+(Don't bother to replace both -- the other one might soldier on for
+another
+50K miles!). In fact, Kevin
+Kelly
+has heard from mechanics that&nbsp; half the EFI light and Check Engine
+light problems can be fixed by pulling the O2 sensor plugs apart and
+putting
+them back together with a little dab of dielectric grease.&nbsp; Kevin
+cleans all automotive connectors with spray contact cleaner (and a
+small
+rat tail file if there is any corrosion) then uses a dab of Permatex
+dielectric
+grease before putting the connectors back together. </font>
+</p>
+
+<p><font face="Segoe UI"><big><b>Model Year Details and Resetting Procedures:</b>
+</big><br>
+
+The "<b>Check Engine</b>" light, located on the auxiliary switch panel,
+was first introduced in the 1988 model year, and for 1988-92(?) models
+merely reminds you that your vehicle has reached a certain mileage and
+should have its emissions systems checked. It is otherwise known as an
+"emissions maintenance reminder, and is designed to come on at 52,000
+mile
+intervals (52,500, 105,000, etc.). It does not indicate any fault in
+the
+engine. In 1993(?) it was renamed the "<b>Service Engine</b>" light and
+performed the same function. </font>
+</p>
+
+<p><font face="Segoe UI">The light is controlled by a small brown box that looks like a
+relay,
+about one inch by two inches, with a sticker labeled "Emission
+Maintenance
+Reminder". On 1988 models it is under the lower dash panel, attached to
+the steering column support bracket along with some relays. On 1989 it
+was moved to a position under the passenger seat along with the relays
+behind the EFI ECU.&nbsp; There is a hole in the box, under the
+sticker,
+into which a small screwdriver can be inserted to connect two contacts
+and reset&nbsp; the light. </font>
+</p>
+
+<p><font face="Segoe UI">On 87-92(?) models, there is an <b>"EFI"</b> light in the main
+instrument
+binnacle warning light cluster. It illuminates when the ECU can no
+longer
+maintain the correct air/fuel ratio due to a malfunction in either the
+throttle potentiometer, mass airflow sensor, or water temperature
+thermistor.
+(Other faults can be detected by the ECU; however these do not cause
+illumination
+of the EFI light, and require the dealer's plug-in diagnostic tester to
+display them). Even with a fault in the system, the ECU will still get
+you home using its limp home" feature -- which I found
+indistinguishable
+from normal operation. The light is reset by disconnecting the battery
+or unplugging the ECU with the ignition off. If the light comes on
+again
+afterwards there is a definite fault. (See also
+<a href="http://www.rangerovers.net/rremedies.html#sensors">Sensor Failure</a> section of
+Common Problems and Fixes page). <br>
+
+</font>
+
+</p>
+
+<p><font face="Segoe UI">In 1990 the 14CUX ECU was introduced, and a digital display unit was
+added under the passenger seat near the ECU, to display the codes for
+the
+various faults causing the EFI light to come on. To ensure we would be
+<u>really</u>
+confused, in 1993(?) the EFI light was renamed the <b>Check Engine</b>
+light!! <br>
+
+</font>
+
+</p>
+
+<p><font face="Segoe UI">For all 1990 and up models Mike
+Lenaghan reports the reset procedure is different: </font>
+</p>
+
+<p><font face="Segoe UI">1. Turn on the ignition.
+<br>
+
+2. There is a 5 pin (or so) connector in the lead from the display.
+It can be found by following the lead out of the display unit - it will
+be somewhere else under the seat. Disconnect the lead from the display
+unit at the&nbsp; connector, and after 10 secs reconnect the lead.
+<br>
+
+3. Turn off the ignition and wait until you hear the main relay click
+out. The next time you switch on the ignition the Check Engine light
+should
+be out.
+<br>
+
+(Step 3 didn't work for Mike -- perhaps because he did not wait long
+enough -- so he ended up disconnecting the battery for about 1 min
+while
+the lead was disconnected and that did reset it). </font>
+</p>
+
+<p><font face="Segoe UI">Of course if you haven't fixed the problem that caused the light to
+turn on in the first place - it will probably come back on again!
+<br>
+
+&nbsp; </font>
+</p>
+
+<p><font face="Segoe UI"><big><font size="+1"><big><a name="p38"></a>4.0/4.6 Models</big></font></big><br>
+
+</font>
+
+</p>
+
+<font face="Segoe UI">
+
+<big><span style="font-weight: bold;">Check Engine Light</span></big><br>
+
+On the <b>4.0/4.6</b>, the Check Engine light acts as the "MIL"
+(Malfunction Indicator Light) mandated under the OBD-II standard, to
+signal that a fault has been detected in the engine
+management/electronic fuel injection
+system. The most likely cause is the need to replace an oxygen sensor,
+but other fairly likely ones include the throttle positionn sensor and
+various other sensors. To discover
+what
+the fault is, and reset the light, you need to access the engine ECU
+using
+a scan tool such as the dealer's Testbook or an <a href="http://www.rangerovers.net/rrparts4.html#obdtwo">OBD-II
+compatible analyzer</a>. Inexpensive versions of the latter can now be
+obtained for under $200. See the <a href="http://www.rangerovers.net/rrparts4.html#obdtwo">scan
+tool section</a> for details of all these tools.<br>
+
+<br>
+
+Unfortunately theGEMS models (1995-98) have non-volatile memories so
+the
+condition cannot be reset by disconnecting the battery.&nbsp; <br>
+
+<br>
+
+<big><span style="font-weight: bold;">Service Engine Light</span></big><br>
+
+This light merelyy signals that the vehicle has done 82,500 miles (or a
+multiple thereof) and an emissions-related service is due. I had
+previously assumed this could be reset with a standard OBD-II scanner.
+However Andy Anderson recently informed me that he tried to do so on
+his 1996 4.0 SE using an Auto X-Ray EX Scan 1000, and found it would
+not do it. This was confirmed by a call to Auto X-Ray. <br>
+
+<br>
+
+<br>
+
+<br>
+
+<big><big><a name="mkiii"></a>Mk III (L322) Range Rover Models</big></big><br>
+
+<br>
+
+&nbsp;</font><p><font face="Segoe UI"><br>
+
+<br>
+
+<big><big><a name="sport"></a>Range Rover Sport </big></big></font></p>
+<p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<p style="margin-top: 0; margin-bottom: 0"><font face="Segoe UI">
+<br>
+</font>
+</p>
+<div style="text-align: center;">
+  <p style="margin-top: 0; margin-bottom: 0"><font face="Segoe UI">&nbsp; </font>
+</p></div>
+<div align="right"><p style="margin-top: 0; margin-bottom: 0">&nbsp;</p>
+<div style="text-align: center;">
+  <p style="margin-top: 0; margin-bottom: 0"><font face="Segoe UI">&nbsp; </font>
+</p></div>
+<p style="margin-top: 0; margin-bottom: 0" align="right">
+<font face="Segoe UI">
+<a href="http://www.rangerovers.net/RRFinal/repairdetails/index.html">Return to Repair Operation Details</a>
+<br>
+<a href="http://www.rangerovers.net/">Return to RangeRovers.net </a>
+<br>
+&nbsp;</font></p>
+<div align="right">
+  <p style="margin-top: 0; margin-bottom: 0">&nbsp;</p></div>
+<hr color="#666666" size="3">
+<p style="margin-top: 0; margin-bottom: 0" align="center"><font size="4" face="Segoe UI">If you
+have corrections, comments or suggestions,&nbsp;
+<a href="mailto:communitysupport@verticalscope.com">email us.</a> &nbsp; </font></p>
+<p style="margin-top: 0; margin-bottom: 0" align="center">
+<font size="4" face="Segoe UI">Page revised February 2, 2012</font></p>
+</div>
+<div style="width:100%; text-align:center; padding:5px;">
+<script type="text/javascript">
+GA_googleFillSlot("Rangerovers_net_728x90_Bottom_AUTO_Content");
+</script>
+</div> 
+
+<script type="text/javascript" src="http://rangerovers.us.intellitxt.com/intellitxt/front.asp?ipid=30735"></script>
+
+
+<!-- ConsolidatedFooters Footers -->
+
+<table cellpadding="3" cellspacing="0" border="0" class="page" align="center" width="100%"><tbody><tr><td class="tfoot" align="center" width="100%"><div class="smallfont"><strong><a href="http://www.verticalscope.com/aboutus/tos.php?site=rangerovers.net">Terms of Use</a></strong></div></td></tr></tbody></table>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22542097-3']);
+  _gaq.push(['_setDomainName', '.rangerovers.net']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+<script type="text/javascript">
+var _comscore = _comscore || [];
+_comscore.push({ c1: "2", c2: "6036030", c4: "rangerovers.net" });
+(function() {
+var s = document.createElement("script"), el =
+document.getElementsByTagName("script")[0]; s.async = true;
+s.src = (document.location.protocol == "https:" ? "https://sb" :
+"http://b") + ".scorecardresearch.com/beacon.js";
+el.parentNode.insertBefore(s, el);
+})(); </script>
+<noscript> &lt;img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6036030&amp;c4=rangerovers.net&amp;cv=2.0&amp;cj=1" alt="" /&gt; </noscript>
+
+<script type="text/javascript">
+  var vglnk = { api_url: '//api.viglink.com/api',
+                key: 'df38a82b37b226eba9ecc919761d01c1' };
+
+  (function(d, t) {
+    var s = d.createElement(t); s.type = 'text/javascript'; s.async = true;
+    s.src = ('https:' == document.location.protocol ? vglnk.api_url :
+             '//cdn.viglink.com/api') + '/vglnk.js';
+    var r = d.getElementsByTagName(t)[0]; r.parentNode.insertBefore(s, r);
+  }(document, 'script'));
+</script>
+
+<script>(function(a){var d=document,c=d.createElement("script");c.async=!0,c.defer=!0,c.src=a,d.getElementsByTagName("head")[0].appendChild(c)})((iatDev=(window.location.href.indexOf("iatDev=1")>-1||document.cookie.indexOf("iatDev=1")>-1),"//"+(window.location.protocol=="http:"&&!iatDev?"":"s")+"data.captifymedia.com/287892.js?r="+Math.random()*1e16+"&m=1112&a=287892"+(iatDev?"&d=1":"")))</script>
+
+<!-- Adblock Check -->
+<script type="text/javascript" src="./check-engine-light_files/advert.js"></script><div id="adsense" style="visibility: hidden;">advert</div>
+<script type="text/javascript">
+function CFCheckAds() {
+    if (document.getElementById("adsense") != undefined) {
+        document.write("<script>_gaq.push([\"_trackEvent\", \"Adblock\", \"Unblocked\", \"false\",,true]);</sc" + "ript>");
+    } else {
+        document.write("<script>_gaq.push([\"_trackEvent\", \"Adblock\", \"Blocked\", \"true\",,true]);</sc" + "ript>");
+    }
+}
+CFCheckAds();
+</script><script>_gaq.push(["_trackEvent", "Adblock", "Unblocked", "false",,true]);</script> 
+<!-- /Adblock Check-->
+
+<!-- /ConsolidatedFooters Footers -->
+
+
+
+<div id="ext_session_alive_reload_prompt" style="display: none;"><div><div>To Keep Your Session Active<br>page will reload in <span id="session_live_reloader_countdown">30</span> seconds<br><a id="ext_session_alive_reload_rule_id" href="chrome-extension://lhobbakbeomfcgjallalccfhfcgleinm/settings.html" target="_rule_settings">Edit Rule<br></a></div><div><button type="button" id="ext_session_alive_reload_cancel">Wait 1 minute</button></div></div></div></body></html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://alum.wpi.edu/~colinb/14cux_protocol.html -->
+<html class="js fontface no-webkit no-chrome no-windows no-ie8 wf-adelle-n4-active wf-adelle-n7-active wf-active" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>cmb :: 14CUX Serial Protocol</title>
+<meta charset="utf-8">
+<link href="http://alum.wpi.edu/~colinb/favicon.png" rel="shortcut icon" type="image/png">
+<link href="./cmb __ 14CUX Serial Protocol_files/adapt.css" media="screen" rel="stylesheet" type="text/css">
+<style type="text/css"></style></head><body id="about">
+<script async="" src="./cmb __ 14CUX Serial Protocol_files/analytics.js"></script><script type="text/javascript" src="./cmb __ 14CUX Serial Protocol_files/analytics(1).js"></script>
+<script type="text/javascript" src="./cmb __ 14CUX Serial Protocol_files/docwrite.js"></script>
+<div class="inner">
+<script type="text/javascript">writeHeader();</script><header><a href="http://alum.wpi.edu/~colinb/"><img src="./cmb __ 14CUX Serial Protocol_files/personal_logo2.png" alt="logo"></a></header>
+</div>
+<div class="inner">
+<div id="content-wrapper">
+<aside class="sidebar">
+<script type="text/javascript">writeNav();</script><nav><ul><li><a href="http://alum.wpi.edu/~colinb/14cux.html">14CUX</a></li><li><a class="indented" href="http://alum.wpi.edu/~colinb/14cux_interface.html">Hardware interface</a></li><li><a class="indented" href="./cmb __ 14CUX Serial Protocol_files/cmb __ 14CUX Serial Protocol.html">Serial protocol</a></li><li><a class="indented" href="http://alum.wpi.edu/~colinb/14cux_software.html">Software</a></li><li><a href="http://alum.wpi.edu/~colinb/14cux_rescue.html">14CUX rescue kit</a></li><li><a href="http://alum.wpi.edu/~colinb/mems_interface.html">MEMS 1.6 diagnostics</a></li><li><a href="http://alum.wpi.edu/~colinb/sykes_acr.html">Inside the Sykes-Pickavant ACR</a></li><li><a href="http://alum.wpi.edu/~colinb/tire_inflators.html">Tire inflators</a></li><li><a href="http://alum.wpi.edu/~colinb/cosmos.html">Cosmos</a></li><li><a href="http://alum.wpi.edu/~colinb/connections.html">Connections</a></li><li><a href="http://alum.wpi.edu/~colinb/contact.html">Contact info</a></li></ul></nav>
+<hr class="sidebar">
+
+</aside>
+<div id="content">
+<div id="main">
+
+<h1>14CUX Serial Protocol</h1>
+<section style="display: block;" class="about current" id="section-id">
+
+<h2>Software protocol</h2>
+		<p class="ital">For background information on the 14CUX, please see the <a href="http://alum.wpi.edu/~colinb/14cux.html">general info</a> page.</p>
+		<p class="ital">For information about the hardware interface over which this software protocol is used, please see the <a href="http://alum.wpi.edu/~colinb/14cux_interface.html">hardware interface</a> page.</p>
+
+		<p>The protocol works as follows: the client sends a series of bytes to the 14CUX, which together specify the memory location to read or write and the number of bytes to read (if reading). When reading, a total of three bytes are sent before the 14CUX begins responding with the requested data. When writing, a total of four bytes are sent; the first three set the address (as with the "read" command) and the fourth is the value that will be written to the specified location.</p>
+		<p>With one exception, each byte sent to the 14CUX will be echoed back and the client should wait to receive each echo before sending the next byte. The single exception to this is the final byte of the "read" command -- instead of its echo, the 14CUX will immediately begin sending the requested data.</p>
+
+		<p>After a client has started sending a command, it is important that the remainder of the command be sent quickly: to avoid the possibility of waiting indefinitely for a partially-completed command, the 14CUX starts a timer when the first byte is received and can time-out if the client waits too long to finish.</p>
+
+		<p>The amount of time required for the 14CUX to send a character over the serial port may change depending on its current state; for example, read requests may be serviced slightly faster before the engine has been started due to the reduced load on the processor.</p>
+
+		<h4>Command byte sequence and structure</h4>
+		<p>The first command byte (call it <i>Command Byte A</i>) contains three fields: (a) a fixed identifier of 0, (b) the quantity of bytes to read (if applicable) and (c) the top two bits of the address that will be read/written. If performing a write command, the Quantity field is ignored. This command byte is structured like so:</p>
+
+		<table class="center">
+		<caption>Figure 0.0: Command Byte A</caption>
+			<tbody><tr>
+				<th>7</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+				<th>3</th>
+				<th>2</th>
+				<th>1</th>
+				<th>0</th>
+			</tr>
+			<tr>
+				<td colspan="1">Fixed ID (set to 0)</td>
+				<td colspan="5">Quantity</td>
+				<td colspan="2">Bits 15:14 of address</td>
+			</tr>
+		</tbody></table>
+
+		<p>After the 14CUX receives this command byte, it will be echoed over the serial port. The client should not send the next command byte until the echo of the first is received.</p>
+		<p>Because of the limited width of the Quantity field, the 14CUX uses an encoding scheme to select a quantity. If reading between 1 and 16 bytes, the Quantity field must be set to (<i>n</i> - 1), where <i>n</i> is the number of bytes desired. Otherwise, <i>n</i> must be one of four predefined values and use the corresponding 5-bit code:</p>
+
+		<table class="center">
+			<caption>Table 1: Allowed read quantities</caption>
+			<tbody><tr>
+				<th><i>n</i> (decimal)</th>
+				<th>Encoding (binary)</th>
+			</tr>
+			<tr> <td>1 through 16</td> <td>00000 through 01111</td> </tr>
+			<tr> <td>80</td> <td>10000</td> </tr>
+			<tr> <td>100</td> <td>10001</td> </tr>
+			<tr> <td>400</td> <td>10010</td> </tr>
+			<tr> <td>512</td> <td>10011</td> </tr>
+		</tbody></table>
+
+		<p>The second command byte (<i>Command Byte B</i>) sets the next eight bits of the read/write address. This byte is also echoed back over the serial link upon receipt, and the client should wait to receive the echo before continuing. This byte has the following structure:</p>
+
+		<table class="center">
+			<caption>Figure 0.1: Command Byte B</caption>
+			<tbody><tr>
+				<th>7</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+				<th>3</th>
+				<th>2</th>
+				<th>1</th>
+				<th>0</th>
+			</tr>
+			<tr>
+				<td colspan="8">Bits 13:6 of address</td>
+			</tr>
+		</tbody></table>
+
+		<p>The third command byte (<i>Command Byte C</i>) contains the last six bits of the address, and it finally determines whether this is a read or a write operation:</p>
+
+		<table class="center">
+			<caption>Figure 0.2: Command Byte C</caption>
+			<tbody><tr>
+				<th>7</th>
+				<th>6</th>
+				<th>5</th>
+				<th>4</th>
+				<th>3</th>
+				<th>2</th>
+				<th>1</th>
+				<th>0</th>
+			</tr>
+			<tr>
+				<td colspan="2">11 for read<br><p class="center">or</p>10 for write</td>
+				<td colspan="6">Bits 5:0 of address</td>
+			</tr>
+		</tbody></table>
+
+		<p>If the third command byte indicates a read operation, then the command string is complete and the 14CUX will begin to respond with the requested byte(s) from memory. Note that the third command byte is <i>not</i> echoed in this case.</p>
+		<p>Otherwise, if the third command byte indicates a write operation, it <i>is</i> echoed, and the client should wait to receive the echo before it sends the fourth and final byte, which is the value to be written. The 14CUX echoes this last byte as well to confirm completion of the write operation.</p>
+		<p>An example: to read 512 bytes from location $C562, the bytes 4F 15 E2 should be sent to the 14CUX.</p>
+
+		<p>Memory offsets that contain information of interest are listed in Table 1 on the <a href="http://alum.wpi.edu/~colinb/14cux.html">main 14CUX page</a>.</p>
+
+		<h2>Software</h2>
+        <p>For software that can use the hardware interface to communicate with the ECU, see the <a href="http://alum.wpi.edu/~colinb/14cux_software.html">14CUX software</a> page.</p>
+
+</section>
+</div>
+</div>
+</div>
+<script type="text/javascript">writeFooter();</script><footer><div class="sfc-member"><p><a href="http://validator.w3.org/check?uri=referer"><img src="./cmb __ 14CUX Serial Protocol_files/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88"></a><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="./cmb __ 14CUX Serial Protocol_files/vcss-blue" alt="Valid CSS!"></a></p></div></footer>
+</div>
+
+<div id="ext_session_alive_reload_prompt" style="display: none;"><div><div>To Keep Your Session Active<br>page will reload in <span id="session_live_reloader_countdown">30</span> seconds<br><a id="ext_session_alive_reload_rule_id" href="chrome-extension://lhobbakbeomfcgjallalccfhfcgleinm/settings.html" target="_rule_settings">Edit Rule<br></a></div><div><button type="button" id="ext_session_alive_reload_cancel">Wait 1 minute</button></div></div></div></body></html>

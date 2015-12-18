@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)http://alum.wpi.edu/~colinb/14cux_interface.html -->
+<html class="js fontface no-webkit no-chrome no-windows no-ie8 wf-adelle-n4-active wf-adelle-n7-active wf-active" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>cmb :: 14CUX Serial Interface</title>
+<meta charset="utf-8">
+<link href="http://alum.wpi.edu/~colinb/favicon.png" rel="shortcut icon" type="image/png">
+<link href="./cmb __ 14CUX Serial Interface_files/adapt.css" media="screen" rel="stylesheet" type="text/css">
+<style type="text/css"></style></head><body id="about">
+<script async="" src="./cmb __ 14CUX Serial Interface_files/analytics.js"></script><script type="text/javascript" src="./cmb __ 14CUX Serial Interface_files/analytics(1).js"></script>
+<script type="text/javascript" src="./cmb __ 14CUX Serial Interface_files/docwrite.js"></script>
+<div class="inner">
+<script type="text/javascript">writeHeader();</script><header><a href="http://alum.wpi.edu/~colinb/"><img src="./cmb __ 14CUX Serial Interface_files/personal_logo2.png" alt="logo"></a></header>
+</div>
+<div class="inner">
+<div id="content-wrapper">
+<aside class="sidebar">
+<script type="text/javascript">writeNav();</script><nav><ul><li><a href="http://alum.wpi.edu/~colinb/14cux.html">14CUX</a></li><li><a class="indented" href="./cmb __ 14CUX Serial Interface_files/cmb __ 14CUX Serial Interface.html">Hardware interface</a></li><li><a class="indented" href="http://alum.wpi.edu/~colinb/14cux_protocol.html">Serial protocol</a></li><li><a class="indented" href="http://alum.wpi.edu/~colinb/14cux_software.html">Software</a></li><li><a href="http://alum.wpi.edu/~colinb/14cux_rescue.html">14CUX rescue kit</a></li><li><a href="http://alum.wpi.edu/~colinb/mems_interface.html">MEMS 1.6 diagnostics</a></li><li><a href="http://alum.wpi.edu/~colinb/sykes_acr.html">Inside the Sykes-Pickavant ACR</a></li><li><a href="http://alum.wpi.edu/~colinb/tire_inflators.html">Tire inflators</a></li><li><a href="http://alum.wpi.edu/~colinb/cosmos.html">Cosmos</a></li><li><a href="http://alum.wpi.edu/~colinb/connections.html">Connections</a></li><li><a href="http://alum.wpi.edu/~colinb/contact.html">Contact info</a></li></ul></nav>
+<hr class="sidebar">
+</aside>
+<div id="content">
+<div id="main">
+
+<h1>14CUX Serial Interface</h1>
+<section style="display: block;" class="about current" id="section-id">
+
+		<h2>Hardware interface</h2>
+		<p class="ital">For background information on the 14CUX, please see the <a href="http://alum.wpi.edu/~colinb/14cux.html">general info</a> page.</p>
+
+        <p>The serial port used by the 14CUX is nonstandard in a number of ways. For a PC to be able to communicate with it, the serial device on the PC must:</p>
+        <ul>
+        <li>invert its RxD line (with respect to normal RS232 signal polarity),</li>
+        <li>be able to set a baud rate close to 7812.5 bps, and</li>
+        <li>be able to receive a 12VDC signal without being damaged.</li>
+        </ul>
+
+        <h3>FTDI cable</h3>
+
+        <p>You'll need to get a 5-volt FTDI USB-to-serial converter cable. Either the <a href="http://www.mouser.com/ProductDetail/FTDI/TTL-232R-5V-WE/?qs=OMDV80DKjRpkYYDGO9eaujGTH0wnKdmG">TTL-232R-5V-WE</a> or the <a href="http://www.mouser.com/ProductDetail/FTDI/TTL-232R-5V/?qs=OMDV80DKjRrD9MyCA82%252bP%252bSWgdIEaA5p">TTL-232R-5V</a> works fine. (If you don't get the wire-ended ("-WE") cable, you'll need to cut the header connector off the end before attaching your own connector.) There are also other manufacturers that build cables using FTDI chips; I've successfully tested the similar <a href="http://www.amazon.com/USB-Header-Like-FTDI-TTL-232R-5V/dp/B004LC28G2/ref=pd_sxp_f_pt">Gearmo cable</a>. When using one of these cables, the software will set the correct baud rate automatically.</p>
+
+        <p>On the cables I've used, the Tx and Rx lines were orange and yellow, respectively. Check the documentation for your cable to be sure about the wiring.</p>
+
+        <p>Once you have the FTDI cable, it's a good idea to test it with a loopback: short the Tx and Rx lines, connect the USB end to a PC, and start a terminal emulator (such as <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/">PuTTY</a>, if you're running Windows.) Be sure to turn off local echo, and any characters you type should appear in the terminal.</p>
+
+        <p>Then, using the <a href="http://www.ftdichip.com/Support/Utilities.htm#FT_Prog">FT_PROG utility from FTDI</a>, invert the polarity of the Rx line (click screenshot to enlarge) and program the new configuration to the device by selecting "Devices" -&gt; "Program" or simply pressing Ctrl-P. After this, unplug and re-plug the USB end of the FTDI cable for the change to take effect.</p>
+
+	<p class="center"><a href="http://alum.wpi.edu/~colinb/images/ft_prog.png"><img src="./cmb __ 14CUX Serial Interface_files/ft_prog_tn.png" alt="FT_PROG screenshot"></a></p>
+	<p class="center">FT_PROG being used to invert the Rx line</p>
+
+        <p>A loopback test in a terminal should no longer work once the Rx line is inverted.</p>
+
+        <h3>Connector and wiring</h3>
+
+        <p>The wiring harness in 14CUX-equipped vehicles already has a beige 5-pin connector on the serial port lines, but the shell for the mating connector is no longer available from most retailers. You will probably want to purchase a more common pair of mating connectors (such as a DB9), and use these instead. If you want to retain the original 5-pin connector on the vehicle's wiring harness, you can splice a different one in parallel.</p>
+
+        <p>The serial connector in the vehicle is usually located in the cabin. In the 1993 Range Rover (NAS), it is under the passenger seat; in the 1994 Defender (NAS), it is behind the passenger footwell kickpanel; in the 1994 Discovery (NAS), it is below the glovebox.</p>
+
+        <p>In most vehicles, the connector is mated to a grounding plug (i.e. the mating half of the connector with a pin installed to ground the ECU's Rx line.) You need to remove the grounding plug before connecting your FTDI cable.</p>
+
+        <p><b>Important:</b> When you attach a connector to the wire end of the FTDI converter cable, you also need to add a resistor of about 390Ω between the FTDI's Rx line (usually yellow) and GND (usually black). This doesn't need to dissipate a lot of power, so a low-wattage resistor is fine. Cut back the FTDI cable's brown, green, and red wires, as they are not used. The connector wiring must allow the wires to mate up as shown in this table:</p>
+
+        <table class="center">
+            <caption>FTDI to 14CUX harness wiring</caption>
+            <tbody><tr>
+                <th>FTDI cable signal</th>
+                <th>FTDI cable wire color</th>
+                <th>14CUX harness signal</th>
+                <th>14CUX harness wire color</th>
+                <th>14CUX TTS connector pin</th>
+            </tr>
+            <tr><td>Tx</td><td>Orange</td><td>Rx</td><td>White w/ pink tracer</td><td>1</td></tr>
+            <tr><td>Rx</td><td>Yellow</td><td>Tx</td><td>White w/ light green tracer</td><td>4</td></tr>
+            <tr><td>GND</td><td>Black</td><td>GND</td><td>Black w/ gray tracer</td><td>5</td></tr>
+        </tbody></table>
+
+        <p>The TTS connector pin numbers in the table above are only important if you've managed to find a mating connector and want to wire it to match the existing TTS connector in the vehicle. The pins in the vehicle side are numbered like so:</p>
+
+	<p class="center"><img src="./cmb __ 14CUX Serial Interface_files/14cux_tts_data_link_connector_vehicle-side.png" alt="14CUX TTS connector pin numbering"></p>
+	<p class="center">TTS connector pin numbering (vehicle side)</p>
+
+        <p>If you <i>are</i> using a TTS connector on the FTDI cable, the back of the connector shell will look like the photo below when it's wired correctly. Note the 400Ω resistor between pins 4 and 5 (click photo to enlarge):</p>
+
+	<p class="center"><a href="http://alum.wpi.edu/~colinb/images/ftdi_with_tts_rear.jpg"><img src="./cmb __ 14CUX Serial Interface_files/ftdi_with_tts_rear_tn.jpg" alt="FTDI cable with TTS connector attached"></a></p>
+	<p class="center">FTDI cable with TTS connector attached</p>
+
+        <p>That's it. The cable should now allow this software to communicate with the 14CUX.</p>
+
+        <h3>Technical background</h3>
+
+        <p>This section explains the reasons behind the unusual signalling characteristics of the 14CUX serial port. The output from the microprocessor (MPU) in the 14CUX's ECU looks like this:</p>
+
+        <img class="center" src="./cmb __ 14CUX Serial Interface_files/14cux_serial_schematic.png" alt="14CUX MPU serial port drawing">
+
+        <p>The Q10 transistor acts like a switch. When the signal from the MPU is high (5V), the switch is ON and the low side of `R150` is shunted to ground, so Pin 9 is zero volts. When the MPU signal goes low, the switch is OFF and the low side of `R150` is pulled up, so Pin 9 goes to 12V. This transistor circuit is designed to buffer and protect the MPU signal, but it also inverts and changes the voltage level. This is why the FTDI USB device must have its RxD signal inverted (to match the 14CUX's inverted TxD.) However, because the FTDI converter is a 5V device, the 12V signal from the ECU must be attenuated with an external resistor to prevent damage. I've found that the 5V signal from the FTDI converter is sufficient to drive the RxD line in the 14CUX.</p>
+
+        <p>The resistor needs to be about 400Ω and soldered between the ECU's output signal and ground. The total resistance will be 400Ω + 100Ω + 500Ω (1000Ω total). The voltage across the 400Ω resistor will be about 4.8V (400/1000 x 12V). The resistor will dissipate only about 57mW when the output goes high (and since the idle state is low, the average will be much lower.)</p>
+
+        <p>The serial port pins are brought out from the harness via the "Data Link Connector", which is C245 in the Land Rover service documentation. Its grounding plug is connector C244.</p>
+
+		<h2>Software</h2>
+                <p>For software that can use the hardware interface to communicate with the ECU, see the <a href="http://alum.wpi.edu/~colinb/14cux_software.html">14CUX software</a> page.</p>
+
+		<br>
+</section>
+</div>
+</div>
+</div>
+<script type="text/javascript">writeFooter();</script><footer><div class="sfc-member"><p><a href="http://validator.w3.org/check?uri=referer"><img src="./cmb __ 14CUX Serial Interface_files/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88"></a><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="./cmb __ 14CUX Serial Interface_files/vcss-blue" alt="Valid CSS!"></a></p></div></footer>
+</div>
+
+<div id="ext_session_alive_reload_prompt" style="display: none;"><div><div>To Keep Your Session Active<br>page will reload in <span id="session_live_reloader_countdown">30</span> seconds<br><a id="ext_session_alive_reload_rule_id" href="chrome-extension://lhobbakbeomfcgjallalccfhfcgleinm/settings.html" target="_rule_settings">Edit Rule<br></a></div><div><button type="button" id="ext_session_alive_reload_cancel">Wait 1 minute</button></div></div></div></body></html>

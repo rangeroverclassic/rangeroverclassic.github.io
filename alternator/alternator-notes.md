@@ -2,7 +2,7 @@
 layout: page 
 title:  "Alternator Notes"
 date:   2015-12-7 19:40:00 -0800
-categories: alternator alternatives
+categories: engine alternator alternatives
 ---
 
 # 1992 RRC Alternator
@@ -20,6 +20,7 @@ categories: alternator alternatives
 - Description: ALTERNATOR - **A127** 85 AMP - 1 GROOVE PULLEY R/R CLC 87-92
 - Saddle mount
 - Shaft size unknown. Known to be smaller than 17 mm.
+- [PDF Specs for Marine version of the OEM Alternator](A127MT-Info-and-Specification.pdf)
 
 # AC Delco
 

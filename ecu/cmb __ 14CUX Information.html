@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://alum.wpi.edu/~colinb/14cux.html -->
+<html class="js fontface no-webkit no-chrome no-windows no-ie8 wf-adelle-n4-active wf-adelle-n7-active wf-active" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>cmb :: 14CUX Information</title>
+<meta charset="utf-8">
+<link href="http://alum.wpi.edu/~colinb/favicon.png" rel="shortcut icon" type="image/png">
+<link href="./cmb __ 14CUX Information_files/adapt.css" media="screen" rel="stylesheet" type="text/css">
+<style type="text/css"></style></head><body id="about">
+<script async="" src="./cmb __ 14CUX Information_files/analytics.js"></script><script type="text/javascript" src="./cmb __ 14CUX Information_files/analytics(1).js"></script>
+<script type="text/javascript" src="./cmb __ 14CUX Information_files/docwrite.js"></script>
+<div class="inner">
+<script type="text/javascript">writeHeader();</script><header><a href="http://alum.wpi.edu/~colinb/"><img src="./cmb __ 14CUX Information_files/personal_logo2.png" alt="logo"></a></header>
+</div>
+<div class="inner">
+<div id="content-wrapper">
+<aside class="sidebar">
+<script type="text/javascript">writeNav();</script><nav><ul><li><a href="./cmb __ 14CUX Information_files/cmb __ 14CUX Information.html">14CUX</a></li><li><a class="indented" href="http://alum.wpi.edu/~colinb/14cux_interface.html">Hardware interface</a></li><li><a class="indented" href="http://alum.wpi.edu/~colinb/14cux_protocol.html">Serial protocol</a></li><li><a class="indented" href="http://alum.wpi.edu/~colinb/14cux_software.html">Software</a></li><li><a href="http://alum.wpi.edu/~colinb/14cux_rescue.html">14CUX rescue kit</a></li><li><a href="http://alum.wpi.edu/~colinb/mems_interface.html">MEMS 1.6 diagnostics</a></li><li><a href="http://alum.wpi.edu/~colinb/sykes_acr.html">Inside the Sykes-Pickavant ACR</a></li><li><a href="http://alum.wpi.edu/~colinb/tire_inflators.html">Tire inflators</a></li><li><a href="http://alum.wpi.edu/~colinb/cosmos.html">Cosmos</a></li><li><a href="http://alum.wpi.edu/~colinb/connections.html">Connections</a></li><li><a href="http://alum.wpi.edu/~colinb/contact.html">Contact info</a></li></ul></nav>
+<hr class="sidebar">
+</aside>
+<div id="content">
+<div id="main">
+
+<h1>14CUX Information</h1>
+<section style="display: block;" class="about current" id="section-id">
+
+       <h3>About</h3>
+        <p>The Lucas 14CUX is an electronic engine management system designed to control fuel injection on the Rover V8 engine. It was used primarily in Land Rover products from its introduction in 1990 until 1995, and also by low-volume sports car manufacturers until the engine ceased production in 2005-2006. More information about the high-level design and applications of the 14CUX can be found in <a href="http://en.wikipedia.org/wiki/Lucas_14CUX">its Wikipedia article</a>.</p>
+        <p>The Rover V8 has a tuning potential that made it popular with specialist sports car builders, and it exists in a variety of configurations from 3.5L to 5.0L displacement and beyond. The fuel maps stored in the 14CUX each represent a two-dimensional array of fueling values, indexed by engine speed and engine load. There are at least two reasons that a person may want to design a custom fuel map:</p>
+        <p>(a) The fuel maps are usually specific to a particular engine displacement; a 3.5L fuel map will not work well with a 5.0L engine. Appropriate fuel maps could be used to allow retrofitting the 14CUX system to later Rover V8 configurations -- these may include the 4.0L and 4.6L units, which were sold in the United States with a different engine management system after the 14CUX had been discontinued.</p>
+        <p>(b) Engines being tuned for motorsport have different performance requirements than those that were designed for road use. Fuel maps can be modified to increase power at the expense of fuel economy.</p>
+        <p>The purpose of this project is to explore and document the internal function of the 14CUX. Exploration of the 14CUX firmware has also uncovered a software protocol that can be used to communicate with the ECU and retrieve diagnostic information over its serial link. (See <a href="http://alum.wpi.edu/~colinb/14cux_interface.html">14CUX Serial Interface</a>)</p>
+
+        <h3>Hardware</h3>
+        <p>In Land Rover vehicles, the ECU will have a Land Rover part number starting with either "PRC" (for earlier units) or "AMR" (for later units).</p>
+        <p>The microprocessor used by the 14CUX is a Motorola 6803U4, which is an uncommon variation of the 6803. The "U4" has three built-in timers as opposed to the standard 6803's single timer; this is important, as the fuel injectors are batch-fired an entire bank at a time, and each of the left and right banks requires its own timing.</p>
+        <p>The code and data is stored in a 27256 PROM, which seems to be soldered in place in earlier (PRC) units and socketed in later units (PRC and AMR). Only half of the 32KB space is used, so the 16KB of code and data is duplicated in the upper half.</p>
+
+        <h3>Memory map</h3>
+        <p>The 64KB address space is not fully utilized and some devices are mapped into memory in multiple locations. For example, the 16KB ROM contents appears in $C000-$FFFF, and again in $8000-$BFFF. The four ADC registers repeat from $4000 to $7FFF. If an empty memory location is read, the low byte of the address is returned as the data. (Thus, if displaying a block of memory read from an empty location, it will appear as an incrementing count.)</p>
+        <p>The low area of the ROM ($C000-$C83F) contains the fuel maps and other data. The area from $C840 to $FFFF contains code, jump tables, and a few fixed data tables. Code stops around $FA50, and is followed by an unprogrammed section. The unprogrammed area of the ROM continues until near the end, where a vector table is located.</p>
+
+        <table>
+            <caption>Table 0: Memory Map</caption>
+            <tbody><tr>
+                <th>Address</th>
+                <th>Device</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>$0000-$0020</td>
+                <td>MPU</td>
+                <td>6803U4 internal register block</td>
+            </tr>
+            <tr>
+                <td>$0040-$00FF</td>
+                <td>MPU</td>
+                <td>6803U4 RAM; first 32 bytes ($40 to $5F) are battery-backed and used to hold fault codes</td>
+            </tr>
+            <tr>
+                <td>$2000-$207F</td>
+                <td>PAL?</td>
+                <td>External RAM (repeats from $2000 to $3FFF)</td>
+            </tr>
+            <tr>
+                <td>$4004-$4007</td>
+                <td>PAL</td>
+                <td>$4000</td>
+            </tr>
+            <tr>
+                <td>$6000-$6004</td>
+                <td>ADC</td>
+                <td>A/D converter registers (repeats from $6000 to $7FFF)</td>
+            </tr>
+            <tr>
+                <td>$C000-$FFFF</td>
+                <td>ROM</td>
+                <td>The contents of the ROM appear both here and in $8000-$BFFF</td>
+            </tr>
+        </tbody></table>
+        
+        <!-- TODO <p>More information to come on the topics of duplicated memory, forced checksum value, and bank switching.</p> -->
+
+        <h3>Notable offsets</h3>
+        <table>
+            <caption>Table 1: Notable offsets</caption>
+            <tbody><tr>
+                <th>Address</th>
+                <th>Contents</th>
+            </tr>
+            <tr>
+                <td>$C000</td>
+                <td>ROM image (16KB)</td>
+            </tr>
+            <tr>
+                <td>$0049-$004E</td>
+                <td>Fault codes (see fault bits table, below)</td>
+            </tr>
+            <tr>
+                <td>$0055/56</td>
+                <td>Main battery voltage (16 bits). This is used as input to the fueling value since it affects the opening time of the injectors.</td>
+            </tr>
+            <tr>
+                <td>$0057/58<br>$0059/5A</td>
+                <td>Mass airflow sensor voltage (16 bits). The A/D converter does a 10-bit reading of the MAF voltage and stores it as a 16-bit value in these locations.</td>
+            </tr>
+            <tr>
+                <td>$005B</td>
+                <td>Fuel map row index. This is calculated mainly from engine load (determined by air flow) with some scaling from engine speed. The value will be from 0x00 to 0x70. The upper nibble can have eight different values (0 thru 7). This will indicate the row in the 16-column by 8-row fuel map.</td>
+            </tr>
+            <tr>
+                <td>$005C</td>
+                <td>Fuel map column index. The firmware looks up one of sixteen engine RPM brackets and stores the corresponding number (from 0x0 thru 0xF) in the upper nibble of this memory location.</td>
+            </tr>
+            <tr>
+                <td>$005F/60</td>
+                <td>Throttle position (16 bits). The 10-bit throttle pot value is stored here. The pot is spring-loaded to its minimum position, but is mounted with the wiper just off the minimum setting. If the pot is removed from its mounting and allowed to read below a certain threshold, the firmware will detect a fault.</td>
+            </tr>
+            <tr>
+                <td>$00A4/A5</td>
+                <td>The throttle pot reading is copied to this location before the throttle pot routine finishes. The next time the routine runs, the new reading (at $005F/60) is compared with this. If the new reading is greater than the old reading by a certain threshold, it means that the throttle is opening quickly. In this case, the fueling is immediately increased. This can be thought of as a software equivalent of the carburetor accelerator pump.</td>
+            </tr>
+            <tr>
+                <td>$006A</td>
+                <td>Coolant temperature.</td>
+            </tr>
+            <tr>
+                <td>$006D</td>
+                <td>Idle bypass motor position. On startup, this will read 0, which is fully open. Fully closed is 180.</td>
+            </tr>
+            <tr>
+                <td>$007A-$007B</td>
+                <td>Engine speed (instantaneous) (16 bits). This is the instantaneous engine ignition pulse width measured in 2-microsecond increments. This is the time between two consecutive ignition pulses from the ignition coil. To obtain RPM, divide 7,500,000 by this number.</td>
+            </tr>
+            <tr>
+                <td>$007C-$007D</td>
+                <td>Engine speed (filtered) (16 bits). This is a running average of the ignition pulse width, and is calculated by averaging three old values and one newly-measured value. The result is a value that changes more smoothly, though it does not precisely represent the most current measurement. Since this filtered speed lags the instantaneous value, it's possibly useful to indicate whether the engine is revving up or slowing down.</td>
+            </tr>
+            <tr>
+                <td>$007E-$007F</td>
+                <td>Engine speed (RPM) (16 bits). This is the actual engine RPM, which the firmware calculated by dividing 7,500,000 by the above pulse width. This calculation is bypassed when the engine speed goes above 1950 RPM. This was probably done because the microprocessor gets very busy at higher RPMs; the processor doesn't have a divide instruction, and it is computationally expensive to calculate the RPM without one.</td>
+            </tr>
+            <tr>
+                <td>$2000</td>
+                <td>Transmission gear / neutral switch. With an automatic transmission, this will read zero in park and a full 8-bit count (0xFF) when in drive. Testing with a Defender 90 manual (NAS) showed that the value stayed at half count (0x7F hex), probably indicating a resistor on this ADC input to put the ECU in manual-gearbox mode.</td>
+            </tr>
+            <tr>
+                <td>$2003</td>
+                <td>Road speed in kilometers per hour.</td>
+            </tr>
+            <tr>
+                <td>$2006</td>
+                <td>Fuel temperature. This value will start about the same as the coolant for a completely cooled engine but will not drop as much as the engine warms since the fuel does not get nearly as hot as the coolant.</td>
+            </tr>
+            <tr>
+                <td>$202C</td>
+                <td>Currently selected fuel map. (This is always 5 on NAS Land Rover vehicles.)</td>
+            </tr>
+            <tr>
+                <td>$2041</td>
+                <td>Checksum of the ROM. This must always be 0x01, or the code will register a fault. (When the ROM image was being finalized, a particular byte was modified to force the contents of the ROM to produce an 8-bit checksum value of 0x01.)</td>
+            </tr>
+        </tbody></table>
+
+        <h3>Fault bits</h3>
+        <p>Fault bits are packed into memory locations $0049 through $004E, as shown below. Shaded cells represent an extended set of fault codes. <b>Update, 2013-12-24:</b> There seems to be a contradiction between the Land Rover documentation and the firmware, with regard to the bank-specific fault codes. I've updated the table below with the correct data. Note that I'm now using the terms 'odd' (cylinders 1-3-5-7) and 'even' (cylinders 2-4-6-8) to differentiate the banks, as this is less ambiguous than left/right or A/B.</p>
+        <table>
+            <caption>Table 2: Fault bits in locations $0049 through $004E</caption>
+            <tbody><tr>
+                <td class="noborder"></td>
+                <th>7</th>
+                <th>6</th>
+                <th>5</th>
+                <th>4</th>
+                <th>3</th>
+                <th>2</th>
+                <th>1</th>
+                <th>0</th>
+            </tr>
+            <tr>
+                <th>$0049</th>
+                <td class="shaded">(21) Tune resistor out of range</td>
+                <td>(12) Airflow meter</td>
+                <td>(50) Misfire (odd)</td>
+                <td>(40) Misfire (even)</td>
+                <td>(spare)</td>
+                <td>(45) O<sub>2</sub> sensor (odd)</td>
+                <td>(44) O<sub>2</sub> sensor (even)</td>
+                <td>(29) ECU checksum error</td>
+            </tr>
+            <tr>
+                <th>$004A</th>
+                <td>(88) Purge valve leak</td>
+                <td>(19) Throttle pot low with MAF high</td>
+                <td>(18) Throttle pot high with MAF low</td>
+                <td>(17) Throttle pot</td>
+                <td>(14) Coolant temp sensor</td>
+                <td>(36) Injector (even)</td>
+                <td>(spare)</td>
+                <td>(34) Injector (odd)</td>
+            </tr>
+            <tr>
+                <th>$004B</th>
+                <td colspan="4">(spare)</td>
+                <td class="shaded">(28) Intake air leak</td>
+                <td colspan="1">(spare)</td>
+                <td class="shaded">(26) Mixture too lean</td>
+                <td colspan="1">(spare)</td>
+            </tr>
+            <tr>
+                <th>$004C</th>
+                <td>(69) Neutral (gear selector) switch</td>
+                <td>(68) Road speed sensor</td>
+                <td>(spare)</td>
+                <td>(48) Idle valve stepper motor</td>
+                <td colspan="3">(spare)</td>
+                <td class="shaded">(23) Low fuel pressure</td>
+            </tr>
+            <tr>
+                <th>$004D</th>
+                <td colspan="2">(spare)</td>
+                <td>(15) Fuel temperature sensor</td>
+                <td class="shaded">(58) Ambiguous: low fuel pressure <i>or</i> intake air leak</td>
+                <td colspan="4">(spare)</td>
+            </tr>
+            <tr>
+                <th>$004E</th>
+                <td>(02) RAM contents unreliable (battery disconnected)</td>
+                <td>(03) Bad checksum on battery-backed RAM</td>
+                <td colspan="6">(spare)</td>
+            </tr>
+        </tbody></table>
+
+        <h3>Analog-to-digital converter</h3>
+        <p>The analog-to-digital converter used by the 14CUX is a Hitachi HD46508. It is a 16-channel device that is capable of 8-bit conversions, 10-bit conversions, and comparator operations. The following table shows the assignment of channels:</p>
+
+        <table>
+            <caption>Table 3: A/D Converter Channel Assignments</caption>
+            <tbody><tr>
+                <th>Channel</th>
+                <th>Parameter</th>
+                <th>Mode</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>Inertia switch</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Heated screen sense</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Airflow sensor</td>
+                <td>10-bit</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Throttle potentiometer</td>
+                <td>10-bit</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Coolant temperature thermistor</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Gearbox neutral switch</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Air conditioner load input</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Road speed transducer</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Main voltage</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>MAF sensor voltage (open-loop fuel maps only; not used for NAS Land Rovers)</td>
+                <td>10-bit</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Tune resistor (disabled in NAS Land Rovers)</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Fuel temperature thermistor</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Left O2 sensor</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>O2 sensor reference voltage</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Diagnostic plug</td>
+                <td>8-bit</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Right O2 sensor</td>
+                <td>8-bit</td>
+            </tr>
+        </tbody></table>
+</section>
+</div>
+</div>
+</div>
+<script type="text/javascript">writeFooter();</script><footer><div class="sfc-member"><p><a href="http://validator.w3.org/check?uri=referer"><img src="./cmb __ 14CUX Information_files/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88"></a><a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="./cmb __ 14CUX Information_files/vcss-blue" alt="Valid CSS!"></a></p></div></footer>
+</div>
+
+<div id="ext_session_alive_reload_prompt" style="display: none;"><div><div>To Keep Your Session Active<br>page will reload in <span id="session_live_reloader_countdown">30</span> seconds<br><a id="ext_session_alive_reload_rule_id" href="chrome-extension://lhobbakbeomfcgjallalccfhfcgleinm/settings.html" target="_rule_settings">Edit Rule<br></a></div><div><button type="button" id="ext_session_alive_reload_cancel">Wait 1 minute</button></div></div></div></body></html>
