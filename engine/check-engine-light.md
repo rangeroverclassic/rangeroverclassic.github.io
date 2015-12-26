@@ -8,7 +8,7 @@ categories: engine "oxygen sensors" "check engine light"
 #### First Fix
 
 One possible cause of the check engine light is a faulty oil pressure
-swith/sensor. The sensor is easily replaced. See this [service
+switch/sensor. The sensor is easily replaced. See this [service
 bulletin](oil-sensor.html). 
 
 The check engine light on my 1992 RRC was on when I purchased the vehicle. One
