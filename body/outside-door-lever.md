@@ -15,7 +15,8 @@ sure where this PDF came from, but whoever created it, thank you!
 [Replacing door lever](./door-handle-repacement-pin-instructions.pdf)
 
 I've used the [pin removal method(pdf)](./door-handle-repacement-pin-instructions.pdf)
-to swap out a broken silver RRC lever and replaced it with a black Disco lever.  
+to swap out a broken silver RRC lever and replaced it with a black Disco lever.
+The Discovery I and RRC door levers are the same. The colors maybe different.
 
 After putting everything back together, I found the the exterior black trim around
 the handle didn't lie flat against the body panel. It appeared not to seal well.
