@@ -19,3 +19,68 @@ github_username: todgru
 markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+
+cats: 
+  - 
+    name: alternatives
+    desc: Options for replacement or upgrades other that stock or OEM
+  - 
+    name: alternator
+    desc: Repair and replacement, symptoms and issues
+  - 
+    name: body
+    desc: You'd be suprised at how much steel is under those aluminium panels 
+  - 
+    name: brakes
+    desc:  
+  - 
+    name: chassis
+    desc: 
+  - 
+    name: check engine light
+    desc: Common issues and easy fixes
+  - 
+    name: ecu
+    desc: Brains of the 3.9l motor 
+  - 
+    name: engine
+    desc: 3.9l Petrol and Diesel 
+  - 
+    name: exhaust
+    desc: 
+  - 
+    name: electrical
+    desc: What does this wire do?
+  - 
+    name: fluids
+    desc:  
+  - 
+    name: maintenance
+    desc: How do I change the oil? 
+  - 
+    name: manuals
+    desc: PDF's 
+  - 
+    name: repair
+    desc: How-to's 
+  - 
+    name: replacement
+    desc: 
+  - 
+    name: suspension
+    desc: 
+  - 
+    name: tires
+    desc: 
+  - 
+    name: transfer case
+    desc: 
+  - 
+    name: transmission
+    desc: 
+  - 
+    name: troubleshooting
+    desc: 
+  - 
+    name: wheels
+    desc: 

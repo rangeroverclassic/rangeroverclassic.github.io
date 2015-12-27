@@ -4,20 +4,20 @@ layout: default
 
 <div class="home">
 
-  <!-- h1 class="page-heading">Posts</h1 --!>
+  <p>{{ site.description }}</p>
 
-  <ul class="post-list">
-    {% for page in site.pages %}
-      <li>
-        <span class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</span>
+  {% for category in site.cats %}
+    <div>
+      <p><strong>{{category.name | upcase}}</strong> <i>{{category.desc}} </i></p>
+      {% for page in site.pages %}
+        {% if page.categories contains category.name %} 
+            <ul> <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></ul>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor%}
 
-        <h2>
-          <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
+  <hr>
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>

@@ -3,6 +3,7 @@ layout: page
 title:  "Alternator Notes"
 date:   2015-12-7 19:40:00 -0800
 categories: engine alternator alternatives
+description: Information I've found about the RRC alternator and possible alternatives
 ---
 
 # 1992 RRC Alternator

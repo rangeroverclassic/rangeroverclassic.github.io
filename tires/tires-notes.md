@@ -2,7 +2,7 @@
 layout: page 
 title:  "Tires"
 date:   2015-12-26 00:00:00 -0800
-categories: tires 
+categories: [tires]
 ---
 
 My current tire size: P225/75R16
