@@ -22,9 +22,6 @@ redcarpet:
 
 cats: 
   - 
-    name: alternatives
-    desc: Options for replacement or upgrades other that stock or OEM
-  - 
     name: alternator
     desc: Repair and replacement, symptoms and issues
   - 
