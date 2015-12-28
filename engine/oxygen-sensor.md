@@ -2,7 +2,7 @@
 layout: page 
 title:  "Oxygen Sensor"
 date:   2015-12-26 00:00:00 -0800
-categories: engine, o2, oxygen sensor, sensor, alternatives, how-to, repair
+categories: engine, o2, oxygen sensor, sensor, alternatives, how-to, repair, "check engine light"
 ---
 
 ### What is a Lambda sensor?
