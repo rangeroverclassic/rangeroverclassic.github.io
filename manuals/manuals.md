@@ -26,7 +26,7 @@ only available through authorized repairers.
 
 ## Transmission 
 
-Repair and rebuild of the ZF HP22E automatic transmission. [Repair Manual](4hp22e)
+Repair and rebuild of the ZF HP22E automatic transmission. [Repair Manual][4hp22e]
 
 [rave]: https://drive.google.com/open?id=0B6Xd4Ltl4DrMWDllcU1HYkJsZ2c
 [1992]: https://drive.google.com/open?id=0B6Xd4Ltl4DrMQ0lUQ3JuVWRMUFE

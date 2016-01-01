@@ -20,6 +20,9 @@ markdown: redcarpet
 redcarpet:
   extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
 
+destination: ../_range-rover-classic_site
+exclude: [ manuals/*.pdf, manuals/*.zip ]
+
 cats: 
   - 
     name: alternator
