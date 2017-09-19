@@ -10,6 +10,9 @@ description: Information I've found about the RRC alternator and possible altern
 
 ---
 
+# Update 2017-09-18
+
+Ended up installing an aftermarket alternator from British Parts Utah <http://www.bputah.com/Parts/Alternator_Range_Rover_Classic.htm>
 # OEM Information
 
 - v belt pulley
