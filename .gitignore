@@ -2,7 +2,3 @@ _site
 .sass-cache
 .jekyll-metadata
 .DS_Store
-manuals/*.pdf
-manuals/*.zip
-manuals/r*/*
-manuals/R*/*
