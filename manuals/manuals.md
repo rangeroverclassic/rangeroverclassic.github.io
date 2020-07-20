@@ -29,6 +29,6 @@ only available through authorized repairers.
 Repair and rebuild of the ZF HP22E automatic transmission. [Repair Manual][4hp22e]
 
 [rave]: https://drive.google.com/open?id=0B6Xd4Ltl4DrMWDllcU1HYkJsZ2c
-[1992]: https://drive.google.com/open?id=0B6Xd4Ltl4DrMQ0lUQ3JuVWRMUFE
+[1992]: https://github.com/rangeroverclassic/rangeroverclassic.github.io/raw/b09ea01d7d3f31bad5677c6f33f3666f996b1958/manuals/Range_Rover_Manual_1992.pdf
 [4hp22e]: https://drive.google.com/open?id=0B6Xd4Ltl4DrMT1FZM3YxeUx2bTA
 [70]: https://drive.google.com/open?id=0B6Xd4Ltl4DrMcW9JcWFKekpSdU0
