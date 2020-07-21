@@ -12,20 +12,10 @@ description: > # this means to ignore newlines until "baseurl:"
   Information and resources for the 1992 Landrover Range Rover Classic
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rangeroverclassic.github.io" # the base hostname & protocol for your site
-twitter_username: todgru
 github_username: todgru
 
 # Build settings
 markdown: GFM
-redcarpet:
-  extensions:
-    [
-      "no_intra_emphasis",
-      "tables",
-      "autolink",
-      "strikethrough",
-      "with_toc_data",
-    ]
 
 destination: ../_range-rover-classic_site
 exclude: [manuals/*.pdf, manuals/*.zip]
