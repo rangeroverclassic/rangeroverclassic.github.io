@@ -7,80 +7,67 @@
 
 # Site settings
 title: todgru's Range Rover Classic
-email: todgru@gmail.com 
+email: todgru@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Information and resources for the 1992 Landrover Range Rover Classic
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rangeroverclassic.github.io" # the base hostname & protocol for your site
-twitter_username: todgru 
+twitter_username: todgru
 github_username: todgru
 
 # Build settings
 markdown: GFM
 redcarpet:
-  extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
+  extensions:
+    [
+      "no_intra_emphasis",
+      "tables",
+      "autolink",
+      "strikethrough",
+      "with_toc_data",
+    ]
 
 destination: ../_range-rover-classic_site
-exclude: [ manuals/*.pdf, manuals/*.zip ]
+exclude: [manuals/*.pdf, manuals/*.zip]
 
-cats: 
-  - 
-    name: alternator
+cats:
+  - name: alternator
     desc: Repair and replacement, symptoms and issues
-  - 
-    name: body
-    desc: You'd be suprised at how much steel is under those aluminium panels 
-  - 
-    name: brakes
-    desc:  
-  - 
-    name: chassis
-    desc: 
-  - 
-    name: check engine light
+  - name: body
+    desc: You'd be suprised at how much steel is under those aluminium panels
+  - name: brakes
+    desc:
+  - name: chassis
+    desc:
+  - name: check engine light
     desc: Common issues and easy fixes
-  - 
-    name: ecu
-    desc: Brains of the 3.9l motor 
-  - 
-    name: engine
-    desc: 3.9l Petrol and Diesel 
-  - 
-    name: exhaust
-    desc: 
-  - 
-    name: electrical
+  - name: ecu
+    desc: Brains of the 3.9l motor
+  - name: engine
+    desc: 3.9l Petrol and Diesel
+  - name: exhaust
+    desc:
+  - name: electrical
     desc: What does this wire do?
-  - 
-    name: fluids
-    desc:  
-  - 
-    name: maintenance
-    desc: How do I change the oil? 
-  - 
-    name: manuals - UPDATED 2020/July
-    desc: PDF's 
-  - 
-    name: repair
-    desc: How-to's 
-  - 
-    name: replacement
-    desc: 
-  - 
-    name: suspension
-    desc: 
-  - 
-    name: tires
-    desc: 
-  - 
-    name: transfer case
-    desc: 
-  - 
-    name: transmission
-    desc: 
-  - 
-    name: troubleshooting
-    desc: 
-  - 
-    name: wheels
-    desc: 
+  - name: fluids
+    desc:
+  - name: maintenance
+    desc: How do I change the oil?
+  - name: manuals UPDATED 2020/July
+    desc: PDF's
+  - name: repair
+    desc: How-to's
+  - name: replacement
+    desc:
+  - name: suspension
+    desc:
+  - name: tires
+    desc:
+  - name: transfer case
+    desc:
+  - name: transmission
+    desc:
+  - name: troubleshooting
+    desc:
+  - name: wheels
+    desc:
