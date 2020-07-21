@@ -16,7 +16,7 @@ twitter_username: todgru
 github_username: todgru
 
 # Build settings
-markdown: redcarpet
+markdown: GFM
 redcarpet:
   extensions: ["no_intra_emphasis", "tables", "autolink", "strikethrough", "with_toc_data"]
 
