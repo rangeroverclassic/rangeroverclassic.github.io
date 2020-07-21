@@ -7,6 +7,8 @@ categories: manuals
 
 Collection of manuals for the Range Rover Classic
 
+_Updated 2020/July/20 - fixed broken manual links_
+
 ## RRC Workshop Manual
 
 Entire [1992 RRC Manual][1992] This manual is good for 87 to 92 Classics. For 93 to 95 checkout the [RAVE][rave] manuals.
