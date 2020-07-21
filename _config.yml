@@ -53,8 +53,8 @@ cats:
     desc:
   - name: maintenance
     desc: How do I change the oil?
-  - name: manuals UPDATED 2020/July
-    desc: PDF's
+  - name: manuals
+    desc: PDF's UPDATED 2020/July
   - name: repair
     desc: How-to's
   - name: replacement
