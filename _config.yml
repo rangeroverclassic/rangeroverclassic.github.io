@@ -22,7 +22,7 @@ exclude: [manuals/*.pdf, manuals/*.zip]
 
 cats:
   - name: about
-  - desc: How to contribute!
+    desc: How to contribute!
   - name: alternator
     desc: Repair and replacement, symptoms and issues
   - name: body
