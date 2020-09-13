@@ -20,9 +20,6 @@ markdown: GFM
 destination: ../_range-rover-classic_site
 exclude: [manuals/*.pdf, manuals/*.zip]
 
-pages:
-  - name: about
-
 cats:
   - name: alternator
     desc: Repair and replacement, symptoms and issues

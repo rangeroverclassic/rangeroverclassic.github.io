@@ -3,21 +3,24 @@ layout: default
 ---
 
 <div class="home">
-
   <p>{{ site.description }}</p>
 
+  <div>
+    <ul>
+      <a href="{{site.baseurl }}/about">How to contribute</a>
+    </ul>
+  </div>
+
   {% for category in site.cats %}
-    <div>
-      <p><strong>{{category.name | upcase}}</strong> <i>{{category.desc}} </i></p>
-      {% for page in site.pages %}
-        {% if page.categories contains category.name %} 
-            <ul> <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></ul>
-        {% endif %}
-      {% endfor %}
-    </div>
+  <div>
+    <p><strong>{{category.name | upcase}}</strong> <i>{{category.desc}} </i></p>
+    {% for page in site.pages %} {% if page.categories contains category.name %}
+    <ul>
+      <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+    </ul>
+    {% endif %} {% endfor %}
+  </div>
   {% endfor%}
 
-  <hr>
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <hr />
 </div>
