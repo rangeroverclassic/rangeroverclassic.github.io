@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: todgru's Range Rover Classic
+title: Range Rover Classic
 email: todgru@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Information and resources for the 1992 Land Rover Range Rover Classic
+  Information and resources for the Land Rover Range Rover Classic. Contribute at https://github.com/rangeroverclassic/rangeroverclassic.github.io.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rangeroverclassic.github.io" # the base hostname & protocol for your site
 github_username: todgru
