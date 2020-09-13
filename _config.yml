@@ -9,7 +9,7 @@
 title: Range Rover Classic
 email: todgru@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Information and resources for the Land Rover Range Rover Classic. Contribute at https://github.com/rangeroverclassic/rangeroverclassic.github.io.
+  Information and resources for the Land Rover Range Rover Classic.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://rangeroverclassic.github.io" # the base hostname & protocol for your site
 github_username: todgru
@@ -21,6 +21,8 @@ destination: ../_range-rover-classic_site
 exclude: [manuals/*.pdf, manuals/*.zip]
 
 cats:
+  - name: about
+  - desc: How to contribute!
   - name: alternator
     desc: Repair and replacement, symptoms and issues
   - name: body
