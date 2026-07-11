@@ -36,7 +36,7 @@ Repair and rebuild of the ZF HP22E automatic transmission. [Repair Manual](./zf-
 [Engine overhaul manual](./35_39_42_V8_overhaul.pdf)
 
 * https://rangeroverclassic.github.io/manuals/rave.zip
-* http://rangeroverclassic.github.io/manuals/Range_Rover_Manual_1992.pdf
-* http://rangeroverclassic.github.io/manuals/zf-4hp22e-repair-manual.pdf
-* http://rangeroverclassic.tgithub.io/manuals/rrc-brakes.pdf
-* http://rangeroverclassic.github.io/manuals/35_39_42_V8_overhaul.pdf
+* https://rangeroverclassic.github.io/manuals/Range_Rover_Manual_1992.pdf
+* https://rangeroverclassic.github.io/manuals/zf-4hp22e-repair-manual.pdf
+* https://rangeroverclassic.tgithub.io/manuals/rrc-brakes.pdf
+* https://rangeroverclassic.github.io/manuals/35_39_42_V8_overhaul.pdf
