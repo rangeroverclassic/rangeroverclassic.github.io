@@ -13,13 +13,13 @@ Collection of manuals for the Range Rover Classic
 ## RRC Workshop Manual
 
 
-Entire [1992 RRC Manual](./Range_Rover_Manual_1992.pdf) This manual is good for 87 to 92 Classics. For 93 to 95 checkout the [rave](./rave.zip) manuals.
+Entire [1992 RRC Manual](https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/Range_Rover_Manual_1992.pdf) This manual is good for 87 to 92 Classics. For 93 to 95 checkout the [rave.zip](https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/rave.zip) manuals.
 
-[Brakes - Section 70 of the manual](./rrc-brakes.pdf)
+[Brakes - Section 70 of the manual](https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/rrc-brakes.pdf)
 
 ## RAVE
 
-[rave](./rave.zip)
+[rave.zip](https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/rave.zip) 561 MB
 
 This is a 561 MB zip. It's supposed to be run on a Windows system. It won't run
 on my Mac. Regardless, it contains all the PDF's for the Defender, Discovery, Range Rover,
@@ -29,14 +29,14 @@ only available through authorized repairers.
 
 ## Transmission
 
-Repair and rebuild of the ZF HP22E automatic transmission. [Repair Manual](./zf-4hp22e-repair-manual.pdf)
+Repair and rebuild of the ZF HP22E automatic transmission. [Repair Manual](https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/zf-4hp22e-repair-manual.pdf)
 
 ## Engine
 
-[Engine overhaul manual](./35_39_42_V8_overhaul.pdf)
+[Engine overhaul manual](https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/35_39_42_V8_overhaul.pdf)
 
-* https://rangeroverclassic.github.io/manuals/rave.zip
-* https://rangeroverclassic.github.io/manuals/Range_Rover_Manual_1992.pdf
-* https://rangeroverclassic.github.io/manuals/zf-4hp22e-repair-manual.pdf
-* https://rangeroverclassic.tgithub.io/manuals/rrc-brakes.pdf
-* https://rangeroverclassic.github.io/manuals/35_39_42_V8_overhaul.pdf
+* https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/rave.zip
+* https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/Range_Rover_Manual_1992.pdf
+* https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/zf-4hp22e-repair-manual.pdf
+* https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/rrc-brakes.pdf
+* https://github.com/rangeroverclassic/rangeroverclassic.github.io/blob/master/manuals/35_39_42_V8_overhaul.pdf
